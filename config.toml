@@ -1,0 +1,60 @@
+baseURL = 'https://y-inoue-with-a.github.io/YApush/ '
+languageCode = 'ja-jp'
+title = '公務員をやめ民間起業への挑戦'
+theme ="soho"
+publishDir = "docs"
+canonifyurls = true
+
+
+
+[menu]
+
+  [[menu.main]]
+  name = "Electricity"
+  weight = 10
+  identifier = "Electricity"
+  url = "/Electricity/"
+
+  
+  [[menu.main]]
+  name = "Sequence Contoroll"
+  weight = 20
+  identifier = "Sequence Contoroll"
+  url = "/Sequence Contoroll/"
+
+  [[menu.main]]
+  name = "electrical work"
+  weight = 30
+  identifier = "electrical work"
+  url = "/electrical work/"
+
+    [[menu.main]]
+  name = "VBA"
+  weight = 40
+  identifier = "VBA"
+  url = "/VBA/"
+
+  [[menu.main]]
+  name = "BLOG"
+  identifier = "BLOG"
+  weight = 50
+  url = "/BLOG/"
+
+    [[menu.main]]
+  name = "Hugo Memo"
+  identifier = "Hugo Memo"
+  weight = 60
+  url = "/Hugo Memo/"
+  
+   [[menu.main]]
+  name = "About"
+  identifier = "about"
+  weight = 70
+  url = "/About/"
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+
+  

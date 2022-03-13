@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on 公務員をやめ民間起業への挑戦</title>
+    <link>https://y-inoue-with-a.github.io/YApush/%20/</link>
+    <description>Recent content in Home on 公務員をやめ民間起業への挑戦</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Wed, 09 Mar 2022 17:00:42 +0900</lastBuildDate><atom:link href="https://y-inoue-with-a.github.io/YApush/%20/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1年目で感じたこと</title>
+      <link>https://y-inoue-with-a.github.io/YApush/%20/blog/2022-3-52/</link>
+      <pubDate>Sat, 05 Mar 2022 22:36:55 +0900</pubDate>
+      
+      <guid>https://y-inoue-with-a.github.io/YApush/%20/blog/2022-3-52/</guid>
+      <description>地方公務員はトータル５年務めました。
+　1年目で感じたことは、ずばり
+　”書類が多い”、”すげー効率の悪い働き方をしている組織”
+　といったところでしょうか。
+　自動化されてきたとはいえ、まだまだ時代遅れというか効率の悪さは天下一品級です。仕方ない部分もありますが。強大な既得権ですから。自動化したらほとんどいらない人ばかり。</description>
+    </item>
+    
+    <item>
+      <title>4年目でのコロナウイルスの到来</title>
+      <link>https://y-inoue-with-a.github.io/YApush/%20/blog/2022-3-53/</link>
+      <pubDate>Sat, 05 Mar 2022 22:36:55 +0900</pubDate>
+      
+      <guid>https://y-inoue-with-a.github.io/YApush/%20/blog/2022-3-53/</guid>
+      <description>皆さんもご存じの通り、2020年頃にコロナウイルスが日本でもはやり始めました。対面での経済活動が難しくなりそうだと感じ始めたころです。 私の住んでいる県でも非常事態宣言が出始めたり、業務がほぼストップ。事務作業はありましたが。</description>
+    </item>
+    
+    <item>
+      <title>公務員での私の所蔵</title>
+      <link>https://y-inoue-with-a.github.io/YApush/%20/blog/2022-3-51/</link>
+      <pubDate>Sat, 05 Mar 2022 22:36:55 +0900</pubDate>
+      
+      <guid>https://y-inoue-with-a.github.io/YApush/%20/blog/2022-3-51/</guid>
+      <description>全国には、都道府県が運営している職業訓練施設があります。もちろん国も運営しております。実は私はどちらも経験しております。したがって、通常の公務員ではなく、技術系公務員になります。中途入庁です。</description>
+    </item>
+    
+    <item>
+      <title>ブログを始めました</title>
+      <link>https://y-inoue-with-a.github.io/YApush/%20/blog/2022-3-1/</link>
+      <pubDate>Tue, 01 Mar 2022 22:47:41 +0900</pubDate>
+      
+      <guid>https://y-inoue-with-a.github.io/YApush/%20/blog/2022-3-1/</guid>
+      <description>公務員を令和4年3月末付けで退職することになり、いろんなしがらみがなくなりますので、それに伴いブログを始めます。
+　このブログでは、主に今までの公務員生活の中で感じたこと、経験したことを書いていきたいと思います。公務員を目指されている方にも少しは参考になるかと思います。
+　左のメニュ―にあるコンテンツを主に書いて行こうと思いますので、よろしくお願いします。今後コンテンツは増える予定です。
+　はじめは、WordPressでブログを始めようと思いましたが、なんだかわかりにくい。また、セキュリティにリスクがあるそうで、HTMLとCSSをうまく編集してサイトを作れないかと思いHugoに到達しました。しかしこれもわかりにくい。というか、あまり情報がない。ちょっとオリジナリティーを出そうとすると、難しい。</description>
+    </item>
+    
+  </channel>
+</rss>
