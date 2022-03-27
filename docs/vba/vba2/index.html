@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja-jp" lang="ja-jp">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.92.2" />
+
+  <title>VBAを理解するために &middot; 公務員をやめ民間起業へ</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="VBAを理解するために">
+<meta itemprop="description" content="VBA理解するには、ずばりオブジェクト指向というものの概念を掴むことです。 この時点で、たぶん巷に売っているような参考書とは違った説明になるかと思います。 いきなり「オブジェクト指向なんて専門的な用語出すな」と怒られそうですが、私自身、1500行程度のプログラムを業務でコーディングしたりしましたが、いまだにオブジェクト指向の専門的なことは分かりません。ただざっくり、そして十分な概念として、いわゆる”物に対して指示を出す”という認識でＯＫです。VBAは立派なオブジェクト指向言語だと私は思います。（VBAはオブジェクト指向言語といえますが、一部通常のオブジェクト指向が備えている機能を持っていません）
+　前述した、”物に対して指示を出す”というのは、どういうことかというと、通常一般的な言語では、bitだのByteだのレジスタ（コンピュータの特赦な記憶領域だと思ってください）などに、細かいことをつらつら記述して、ある特定の記憶場所に対して1だの0だの細かい値を書き込んで、使用したい機能を使用します。これは、第三者が見ると、極めて何を行っているか理解できないコードになります。例えば、この細かい指示を、「この機能を利用する」という、状態になるまでの命令や設定をまとまりにして、他の人で利用しやすいように、簡単な命令に置き換えて、利用できるようにしてしまう、これがオブジェクト指向の根底の考え方であると思います。いわゆるサブルーチンに、仮想的に物の名前を振ってしまうということです。
+　まさに、このまとまりのプログラムに仮想的に物の名前を割り当てて、利用している側からすると、物に対して命令しているかのように見せております。 例えば、Workbookオブジェクトなんて物があります。これはExcelbookその物です。この実態は、そのExcelファイルを探して、利用するための複雑なプログラムコードがバックグラウンドにあるプログラム集的な物にすぎません。 「ブックを開く」なんてことをやりたかったら、Workbooks.Openとなるわけです。イメージ沸きましたかね。巷の本では、オブジェクトは物です。というような説明で終わってしまい、私も意味不明でした。これは正確には間違いで、その物を特定して、利用できる機能などの複雑なプログラムを利用しやすいように、塊にして物をイメージさせたり、動作をイメ―ジさせるような名前に置き換えただけです。
+　ずばり、オブジェクトとは
+　操作対象とするものを指し示して、その対象でできる機能を利用するためのプログラムの塊の寄せ集めです。伝わったかな？
+　私の経験上、オブジェクト、メソッド、プロパティの概念が理解できてから、飛躍的に複雑なコードを書けるようになったので、長ったらしく書きました。"><meta itemprop="datePublished" content="2022-03-17T23:46:19+09:00" />
+<meta itemprop="dateModified" content="2022-03-17T23:46:19+09:00" />
+<meta itemprop="wordCount" content="10">
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="VBAを理解するために"/>
+<meta name="twitter:description" content="VBA理解するには、ずばりオブジェクト指向というものの概念を掴むことです。 この時点で、たぶん巷に売っているような参考書とは違った説明になるかと思います。 いきなり「オブジェクト指向なんて専門的な用語出すな」と怒られそうですが、私自身、1500行程度のプログラムを業務でコーディングしたりしましたが、いまだにオブジェクト指向の専門的なことは分かりません。ただざっくり、そして十分な概念として、いわゆる”物に対して指示を出す”という認識でＯＫです。VBAは立派なオブジェクト指向言語だと私は思います。（VBAはオブジェクト指向言語といえますが、一部通常のオブジェクト指向が備えている機能を持っていません）
+　前述した、”物に対して指示を出す”というのは、どういうことかというと、通常一般的な言語では、bitだのByteだのレジスタ（コンピュータの特赦な記憶領域だと思ってください）などに、細かいことをつらつら記述して、ある特定の記憶場所に対して1だの0だの細かい値を書き込んで、使用したい機能を使用します。これは、第三者が見ると、極めて何を行っているか理解できないコードになります。例えば、この細かい指示を、「この機能を利用する」という、状態になるまでの命令や設定をまとまりにして、他の人で利用しやすいように、簡単な命令に置き換えて、利用できるようにしてしまう、これがオブジェクト指向の根底の考え方であると思います。いわゆるサブルーチンに、仮想的に物の名前を振ってしまうということです。
+　まさに、このまとまりのプログラムに仮想的に物の名前を割り当てて、利用している側からすると、物に対して命令しているかのように見せております。 例えば、Workbookオブジェクトなんて物があります。これはExcelbookその物です。この実態は、そのExcelファイルを探して、利用するための複雑なプログラムコードがバックグラウンドにあるプログラム集的な物にすぎません。 「ブックを開く」なんてことをやりたかったら、Workbooks.Openとなるわけです。イメージ沸きましたかね。巷の本では、オブジェクトは物です。というような説明で終わってしまい、私も意味不明でした。これは正確には間違いで、その物を特定して、利用できる機能などの複雑なプログラムを利用しやすいように、塊にして物をイメージさせたり、動作をイメ―ジさせるような名前に置き換えただけです。
+　ずばり、オブジェクトとは
+　操作対象とするものを指し示して、その対象でできる機能を利用するためのプログラムの塊の寄せ集めです。伝わったかな？
+　私の経験上、オブジェクト、メソッド、プロパティの概念が理解できてから、飛躍的に複雑なコードを書けるようになったので、長ったらしく書きました。"/>
+
+
+<meta property="og:title" content="VBAを理解するために" />
+<meta property="og:description" content="VBA理解するには、ずばりオブジェクト指向というものの概念を掴むことです。 この時点で、たぶん巷に売っているような参考書とは違った説明になるかと思います。 いきなり「オブジェクト指向なんて専門的な用語出すな」と怒られそうですが、私自身、1500行程度のプログラムを業務でコーディングしたりしましたが、いまだにオブジェクト指向の専門的なことは分かりません。ただざっくり、そして十分な概念として、いわゆる”物に対して指示を出す”という認識でＯＫです。VBAは立派なオブジェクト指向言語だと私は思います。（VBAはオブジェクト指向言語といえますが、一部通常のオブジェクト指向が備えている機能を持っていません）
+　前述した、”物に対して指示を出す”というのは、どういうことかというと、通常一般的な言語では、bitだのByteだのレジスタ（コンピュータの特赦な記憶領域だと思ってください）などに、細かいことをつらつら記述して、ある特定の記憶場所に対して1だの0だの細かい値を書き込んで、使用したい機能を使用します。これは、第三者が見ると、極めて何を行っているか理解できないコードになります。例えば、この細かい指示を、「この機能を利用する」という、状態になるまでの命令や設定をまとまりにして、他の人で利用しやすいように、簡単な命令に置き換えて、利用できるようにしてしまう、これがオブジェクト指向の根底の考え方であると思います。いわゆるサブルーチンに、仮想的に物の名前を振ってしまうということです。
+　まさに、このまとまりのプログラムに仮想的に物の名前を割り当てて、利用している側からすると、物に対して命令しているかのように見せております。 例えば、Workbookオブジェクトなんて物があります。これはExcelbookその物です。この実態は、そのExcelファイルを探して、利用するための複雑なプログラムコードがバックグラウンドにあるプログラム集的な物にすぎません。 「ブックを開く」なんてことをやりたかったら、Workbooks.Openとなるわけです。イメージ沸きましたかね。巷の本では、オブジェクトは物です。というような説明で終わってしまい、私も意味不明でした。これは正確には間違いで、その物を特定して、利用できる機能などの複雑なプログラムを利用しやすいように、塊にして物をイメージさせたり、動作をイメ―ジさせるような名前に置き換えただけです。
+　ずばり、オブジェクトとは
+　操作対象とするものを指し示して、その対象でできる機能を利用するためのプログラムの塊の寄せ集めです。伝わったかな？
+　私の経験上、オブジェクト、メソッド、プロパティの概念が理解できてから、飛躍的に複雑なコードを書けるようになったので、長ったらしく書きました。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://y-inoue-with-a.github.io/YApush/vba/vba2/" /><meta property="article:section" content="VBA" />
+<meta property="article:published_time" content="2022-03-17T23:46:19+09:00" />
+<meta property="article:modified_time" content="2022-03-17T23:46:19+09:00" />
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type":"Person",
+      "@id": "https://y-inoue-with-a.github.io/YApush/#author",
+      "name":  null ,
+      "image": {
+        "@type":"ImageObject",
+        
+        
+      },
+      "description":  null 
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://y-inoue-with-a.github.io/YApush/#website",
+      "url": "https://y-inoue-with-a.github.io/YApush/",
+      "name": "公務員をやめ民間起業へ",
+      "description":  null ,
+      "publisher": {
+        "@id": "https://y-inoue-with-a.github.io/YApush/#author"
+      },
+      "inLanguage": "ja-jp"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://y-inoue-with-a.github.io/YApush/vba/vba2/#webpage",
+      "url": "https://y-inoue-with-a.github.io/YApush/vba/vba2/",
+      "name": "VBAを理解するために",
+      "isPartOf": {
+        "@id": "https://y-inoue-with-a.github.io/YApush/#website"
+      },
+      "about": {
+         "@id": "https://y-inoue-with-a.github.io/YApush/#author"
+      },
+      "datePublished": "2022-03-17T23:46:19+09:00",
+      "dateModified": "2022-03-17T23:46:19+09:00",
+      "description": "VBA理解するには、ずばりオブジェクト指向というものの概念を掴むことです。 この時点で、たぶん巷に売っているような参考書とは違った説明になるかと思います。 いきなり「オブジェクト指向なんて専門的な用語出すな」と怒られそうですが、私自身、1500行程度のプログラムを業務でコーディングしたりしましたが、いまだにオブジェクト指向の専門的なことは分かりません。ただざっくり、そして十分な概念として、いわゆる”物に対して指示を出す”という認識でＯＫです。VBAは立派なオブジェクト指向言語だと私は思います。（VBAはオブジェクト指向言語といえますが、一部通常のオブジェクト指向が備えている機能を持っていません）\n　前述した、”物に対して指示を出す”というのは、どういうことかというと、通常一般的な言語では、bitだのByteだのレジスタ（コンピュータの特赦な記憶領域だと思ってください）などに、細かいことをつらつら記述して、ある特定の記憶場所に対して1だの0だの細かい値を書き込んで、使用したい機能を使用します。これは、第三者が見ると、極めて何を行っているか理解できないコードになります。例えば、この細かい指示を、「この機能を利用する」という、状態になるまでの命令や設定をまとまりにして、他の人で利用しやすいように、簡単な命令に置き換えて、利用できるようにしてしまう、これがオブジェクト指向の根底の考え方であると思います。いわゆるサブルーチンに、仮想的に物の名前を振ってしまうということです。\n　まさに、このまとまりのプログラムに仮想的に物の名前を割り当てて、利用している側からすると、物に対して命令しているかのように見せております。 例えば、Workbookオブジェクトなんて物があります。これはExcelbookその物です。この実態は、そのExcelファイルを探して、利用するための複雑なプログラムコードがバックグラウンドにあるプログラム集的な物にすぎません。 「ブックを開く」なんてことをやりたかったら、Workbooks.Openとなるわけです。イメージ沸きましたかね。巷の本では、オブジェクトは物です。というような説明で終わってしまい、私も意味不明でした。これは正確には間違いで、その物を特定して、利用できる機能などの複雑なプログラムを利用しやすいように、塊にして物をイメージさせたり、動作をイメ―ジさせるような名前に置き換えただけです。\n　ずばり、オブジェクトとは\n　操作対象とするものを指し示して、その対象でできる機能を利用するためのプログラムの塊の寄せ集めです。伝わったかな？\n　私の経験上、オブジェクト、メソッド、プロパティの概念が理解できてから、飛躍的に複雑なコードを書けるようになったので、長ったらしく書きました。",
+      "inLanguage": "ja-jp",
+      "potentialAction": [
+        {
+          "@type": "ReadAction",
+          "target": [
+            "https://y-inoue-with-a.github.io/YApush/vba/vba2/"
+          ]
+        }
+      ]
+    },
+    {
+      "@type": "Article",
+      "isPartOf": {
+        "@id": "https://y-inoue-with-a.github.io/YApush/vba/vba2/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://y-inoue-with-a.github.io/YApush/vba/vba2/#webpage"
+      },
+      "headline": "VBAを理解するために",
+      "datePublished": "2022-03-17T23:46:19+09:00",
+      "dateModified": "2022-03-17T23:46:19+09:00",
+      "publisher": {
+        "@id": "https://y-inoue-with-a.github.io/YApush/#author"
+      },
+      "keywords": [
+      ],
+      "articleSection": [
+      ],
+      "inLanguage": "ja-jp",
+      "author": {
+        "@type": "Person",
+        "name":  null 
+      },
+      "potentialAction": [
+        {
+          "@type": "CommentAction",
+          "name": "Comment",
+          "target": [
+            "https://y-inoue-with-a.github.io/YApush/vba/vba2/#comments"
+          ]
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="https://y-inoue-with-a.github.io/YApush/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="https://y-inoue-with-a.github.io/YApush/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="https://y-inoue-with-a.github.io/YApush/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="https://y-inoue-with-a.github.io/YApush/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="https://y-inoue-with-a.github.io/YApush/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+      
+
+      <h1>公務員をやめ民間起業へ</h1>
+
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://y-inoue-with-a.github.io/YApush/">Home</a>
+        </li>
+        <li>
+          <a href="https://y-inoue-with-a.github.io/YApush/electricity/">Electricity</a>
+        </li><li>
+          <a href="https://y-inoue-with-a.github.io/YApush/sequence-contoroll/">Sequence Contoroll</a>
+        </li><li>
+          <a href="https://y-inoue-with-a.github.io/YApush/electrical-work/">electrical work</a>
+        </li><li>
+          <a href="https://y-inoue-with-a.github.io/YApush/vba/">VBA</a>
+        </li><li>
+          <a href="https://y-inoue-with-a.github.io/YApush/blog/">BLOG</a>
+        </li><li>
+          <a href="https://y-inoue-with-a.github.io/YApush/hugo-memo/">Hugo Memo</a>
+        </li><li>
+          <a href="https://y-inoue-with-a.github.io/YApush/about/">About</a>
+        </li>
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1 class="title">VBAを理解するために</h1>
+  
+
+  <div class="post-date">
+    <time datetime="2022-03-17T23:46:19&#43;0900">Mar 17, 2022</time> <span class="readtime">&middot; 1 min read</span>
+  </div>
+
+  <div>
+  <p>　VBA理解するには、ずばりオブジェクト指向というものの概念を掴むことです。
+この時点で、たぶん巷に売っているような参考書とは違った説明になるかと思います。
+いきなり「オブジェクト指向なんて専門的な用語出すな」と怒られそうですが、私自身、1500行程度のプログラムを業務でコーディングしたりしましたが、いまだにオブジェクト指向の専門的なことは分かりません。ただざっくり、そして十分な概念として、いわゆる”物に対して指示を出す”という認識でＯＫです。VBAは立派なオブジェクト指向言語だと私は思います。（VBAはオブジェクト指向言語といえますが、一部通常のオブジェクト指向が備えている機能を持っていません）</p>
+<p>　前述した、”物に対して指示を出す”というのは、どういうことかというと、通常一般的な言語では、bitだのByteだのレジスタ（コンピュータの特赦な記憶領域だと思ってください）などに、細かいことをつらつら記述して、ある特定の記憶場所に対して1だの0だの細かい値を書き込んで、使用したい機能を使用します。これは、第三者が見ると、極めて何を行っているか理解できないコードになります。例えば、この細かい指示を、「この機能を利用する」という、状態になるまでの命令や設定をまとまりにして、他の人で利用しやすいように、簡単な命令に置き換えて、利用できるようにしてしまう、これがオブジェクト指向の根底の考え方であると思います。いわゆるサブルーチンに、仮想的に物の名前を振ってしまうということです。</p>
+<p>　まさに、このまとまりのプログラムに仮想的に物の名前を割り当てて、利用している側からすると、物に対して命令しているかのように見せております。
+　例えば、Workbookオブジェクトなんて物があります。これはExcelbookその物です。この実態は、そのExcelファイルを探して、利用するための複雑なプログラムコードがバックグラウンドにあるプログラム集的な物にすぎません。
+　「ブックを開く」なんてことをやりたかったら、Workbooks.Openとなるわけです。イメージ沸きましたかね。巷の本では、オブジェクトは物です。というような説明で終わってしまい、私も意味不明でした。これは正確には間違いで、その物を特定して、利用できる機能などの複雑なプログラムを利用しやすいように、塊にして物をイメージさせたり、動作をイメ―ジさせるような名前に置き換えただけです。</p>
+<p>　ずばり、オブジェクトとは</p>
+<p>　　操作対象とするものを指し示して、その対象でできる機能を利用するためのプログラムの塊の寄せ集めです。伝わったかな？</p>
+<p>　私の経験上、オブジェクト、メソッド、プロパティの概念が理解できてから、飛躍的に複雑なコードを書けるようになったので、長ったらしく書きました。</p>
+
+  </div>
+
+  
+
+
+  <div class="share-buttons">
+  <a class="twitter-share-button"
+     href="#"
+     title="Share on Twitter"
+     data-url="https://y-inoue-with-a.github.io/YApush/vba/vba2/"
+     data-text="VBAを理解するために"><i class="fab fa-twitter"></i></a>
+
+  <a class="linkedin-share-button"
+     href="#"
+     title="Share on LinkedIn"
+     data-url="https://y-inoue-with-a.github.io/YApush/vba/vba2/"
+     data-text="VBAを理解するために"><i class="fab fa-linkedin-in"></i></a>
+
+  <a class="facebook-share-button"
+     href="#"
+     title="Share on Facebook"
+     data-url="https://y-inoue-with-a.github.io/YApush/vba/vba2/"
+     data-text="VBAを理解するために"><i class="fab fa-facebook"></i></a>
+
+  <a class="telegram-share-button"
+     href="#"
+     title="Share on Telegram"
+     data-url="https://y-inoue-with-a.github.io/YApush/vba/vba2/"
+     data-text="VBAを理解するために"><i class="fab fa-telegram"></i></a>
+
+  <a class="pinterest-share-button"
+     href="#"
+     title="Share on Pinterest"
+     data-url="https://y-inoue-with-a.github.io/YApush/vba/vba2/"
+     data-text="VBAを理解するために"><i class="fab fa-pinterest"></i></a>
+</div>
+
+
+  
+</div>
+  </main>
+
+  <footer>
+  <div>
+    <p>
+      &copy;  2022
+
+      
+
+      
+    </p>
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+
+  <script src="https://y-inoue-with-a.github.io/YApush/js/jquery.min.js"></script>
+  <script src="https://y-inoue-with-a.github.io/YApush/js/soho.js"></script>
+
+  
+
+  
+</body>
+</html>
