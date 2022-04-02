@@ -1,9 +1,9 @@
-baseURL = 'https://y-inoue-with-a.github.io/YApush/'
+baseURL = 'https://y-inoue-with-a.github.io/'
 languageCode = 'ja-jp'
 title = '公務員をやめ民間起業へ'
 theme ="soho"
-publishDir = "docs"
-canonifyurls = true
+publishDir = "public"
+canonifyurls = true  # 
 
 
 
